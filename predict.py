@@ -2,7 +2,7 @@ import sys
 import tensorflow as tf
 from PIL import Image,ImageFilter
 
-def predictint(imvalue):
+def predictLetter(imvalue):
     x = tf.placeholder(tf.float32, [None, 784])
     W = tf.Variable(tf.zeros([784, 10]))
     b = tf.Variable(tf.zeros([10]))
@@ -54,8 +54,8 @@ def imageprepare(argv):
 
 def main(argv):
     imvalue = imageprepare(argv)
-    predint = predictint(imvalue)
-    print (predint[0]) 
+    predictedLetter = predictLetter(imvalue)
+    print (predictedLetter[0]) 
     
 if __name__ == "__main__":
     main(sys.argv[1])
